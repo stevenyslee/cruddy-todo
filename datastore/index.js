@@ -13,6 +13,25 @@ exports.create = (text, callback) => {
   callback(null, {id: id, text: text});
 };
 
+fs.writeFile('./dataDir', fileContent, (err) => {
+    if (err) throw err;
+
+    console.log("The file was succesfully saved!");
+});
+
+exports.create = (text, callback) => {
+  counter.getNextUniqueId((err, id) => {
+
+  });
+  
+  fs.writeFile('./dataDir', fileContent, (err) => {
+    if (err) throw err;
+    console.log("The file was succesfully saved!");
+  });
+
+}
+
+
 exports.readOne = (id, callback) => {
   var item = items[id];
   if (!item) {
